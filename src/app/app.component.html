@@ -1,27 +1,41 @@
-<app-list>
-  <ng-template #itemTemplate>
-    <li *ngFor="let file of items">
-      {{file}}
-    </li>
-  </ng-template>
-  <ng-template #itemTemplateSecond let-item let-index="index">
-    {{ index }} - {{ item }}
-  </ng-template>
-  <ng-template #footerTemplate>
-    <li><strong>--- End of List ---</strong></li>
-  </ng-template>
-</app-list>
-
-<!--<my-list [items]="['One','Two','Three']">-->
-<!--  <ng-template myTemplate="empty">-->
-<!--    <span style="color: gray">[Empty item here]</span>-->
+<!--<app-list>-->
+<!--  <ng-template #itemTemplate>-->
+<!--    <li *ngFor="let file of items">-->
+<!--      {{file}}-->
+<!--    </li>-->
 <!--  </ng-template>-->
-
-<!--  <ng-template myTemplate="item" let-item let-index="index">-->
-<!--    {{ index }} — <strong>{{ item }}</strong>-->
+<!--  <ng-template #itemTemplateSecond let-item let-index="index">-->
+<!--    {{ index }} - {{ item }}-->
 <!--  </ng-template>-->
-
-<!--  <ng-template myTemplate="footer">-->
-<!--    <em style="color: steelblue">— End of List —</em>-->
+<!--  <ng-template #footerTemplate>-->
+<!--    <li><strong>-&#45;&#45; End of List -&#45;&#45;</strong></li>-->
 <!--  </ng-template>-->
-<!--</my-list>-->
+<!--</app-list>-->
+
+<my-list [items]="['One','Two','Three']">
+  <ng-template myTemplate="empty">
+    <span style="color: gray"></span>
+  </ng-template>
+
+  <ng-template myTemplate="item" let-item let-index="index">
+    {{ index }} — <strong>{{ item }}</strong>
+  </ng-template>
+
+  <ng-template myTemplate="footer">
+    <em style="color: steelblue">— End of List 1 —</em>
+  </ng-template>
+</my-list>
+
+<my-list [items]="['for','five','six']">
+  <ng-template myTemplate="empty">
+    <span style="color: gray">[Empty item here]</span>
+  </ng-template>
+
+  <ng-template myTemplate="item" let-item let-index="index">
+    {{ index }} — <strong>{{ item }}</strong>
+  </ng-template>
+
+  <ng-template myTemplate="footer">
+    <em style="color: steelblue">— End of List 2 —</em>
+  </ng-template>
+</my-list>
