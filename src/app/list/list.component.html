@@ -1,0 +1,30 @@
+<ul>
+  <!-- Empty item -->
+  <li></li>
+
+  <!-- Render items using parent's template -->
+  <ng-container
+    *ngTemplateOutlet="itemTemplate">
+  </ng-container>
+</ul>
+
+<ul>
+  <!-- Empty item -->
+  <li></li>
+
+  <!-- Slot 1: item template -->
+  <li *ngFor="let item of items; let i = index">
+    <ng-container
+      *ngTemplateOutlet="itemTemplateSecond; context: {$implicit: item, index: i}">
+    </ng-container>
+  </li>
+</ul>
+
+<!-- Slot 2: footer template -->
+<ng-container *ngIf="footerTemplate">
+  <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+</ng-container>
+
+<ng-container *ngIf="footerTemplate">
+  <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+</ng-container>
